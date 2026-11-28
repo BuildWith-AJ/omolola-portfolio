@@ -664,9 +664,9 @@ body.has-cursor,body.has-cursor a,body.has-cursor button{cursor:none}
       ratio:'landscape', 
       desc:'AI-powered commercials crafted to bring products and brand stories to life.', 
       videos:[
-        {src:'videos/commercial1.mp4', title:'Commercial 1', poster:'videos-poster/commercial1-poster.jpg'},
-        {src:'videos/commercial-2.mp4', title:'Commercial 2', poster:'videos-poster/commercial1-poster.jpg'},
-        {src:'videos/commercial-3.mp4', title:'Commercial 3', poster:''},
+        {src:'videos/commercial-1.mp4', title:'Commercial 1', poster:'videos-poster/commercial-1-poster.png'},
+        {src:'videos/commercial-2.mp4', title:'Commercial 2', poster:'videos-poster/commercial-2-poster.jpeg'},
+        {src:'videos/commercial-3.mp4', title:'Commercial 3', poster:'videos-poster/commercial-3-poster.jpeg'},
         {src:'videos/commercial-4.mp4', title:'Commercial 4', poster:''},
         {src:'videos/commercial-5.mp4', title:'Commercial 5', poster:''}
       ]
@@ -712,9 +712,9 @@ body.has-cursor,body.has-cursor a,body.has-cursor button{cursor:none}
       var frame=document.createElement('div'); frame.className='vid-frame';
       var ph=document.createElement('span'); ph.className='vid-ph'; ph.textContent='Video '+pad(k+1)+' · add '+v.src;
       var vid=document.createElement('video');
-      vid.controls=true; vid.preload='metadata'; vid.playsInline=true;
+      vid.controls=true; vid.preload='none'; vid.playsInline=true;
       if(v.poster) vid.poster=v.poster;
-      var src=document.createElement('source'); src.src=v.src+'#t=0.1';
+      var src=document.createElement('source'); src.src=v.src;
       src.addEventListener('error',function(){vid.style.display='none'});
       vid.appendChild(src);
       frame.appendChild(ph); frame.appendChild(vid);
